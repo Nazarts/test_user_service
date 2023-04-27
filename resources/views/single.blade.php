@@ -9,11 +9,11 @@
             <p class="fs-2 mt-5 fw-semibold">{{$user->name}}</p>
             <p class="text-info fs-5">{{$user->role_name->name}}</p>
             <p class="">Email: <span class="fw-semibold">{{$user->email}}</span></p>
-            <p>Description:</p>
+            <p class="fw-bold fs-3">Description:</p>
             <p class="">{!! $user->description !!}</p>
         </div>
         @if(Auth::user()->role_name->name === 'Admin')
-            <div class="d-flex mt-3 gap-4">
+            <div class="d-flex mt-5 gap-4">
                 <a class="btn btn-dark" href="/users/{{$user->id}}/edit">Update user</a>
                 <form method="post" class="" action="/users">
                     @csrf
